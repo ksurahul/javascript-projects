@@ -6,7 +6,7 @@ let language = 'JavaScript';
 console.log(language.slice(0,1) + language.slice(4,5))
 
 //2. Without using slice(), use method chaining to accomplish the same thing.
-console.log(language.charAt(0) + language.charAt(4));
+console.log(language.substring(0,5).replace('ava',''));
 
 //3. Use bracket notation and a template literal to print, "The abbreviation for 'JavaScript' is 'JS'."
 console.log(`The abbreivation for '${language} is ${language[0]}${language[4]}`)
