@@ -5,11 +5,15 @@ let protoArray4 = "Comma-spaces, might, require, typing, caution";
 
 strings = [protoArray1, protoArray2, protoArray3, protoArray4];
 
-//2) 
+if (strings[0].includes(',')){
+	console.log('This string contains commas')
+} 
+
+//2)
 function reverseCommas() {
 	//TODO: 1. create and instantiate your variables.
-	let check;
-	let output;
+	let check = strings[0];
+	let output = check.split(',').reverse().join(',');
 	//TODO: 2. write the code required for this step
 
 	//NOTE: For the code to run properly, you must return your output.  this needs to be the final line of code within the function's { }.
@@ -18,9 +22,8 @@ function reverseCommas() {
 
 //3)
 function semiDash() {
-	let check;
-	let output;
-//TODO: write the code required for this step
+	let check = strings[1];
+	let output = check.split(';').sort().join('-');
 
   
 	return output;
@@ -28,18 +31,16 @@ function semiDash() {
 
 //4)
 function reverseSpaces() {
-	let check;
-	let output;
-  //TODO: write the code required for this step
+	let check = strings[2];
+	let output = check.split(' ').sort().reverse().join(' ');
 
 	return output;
 }
 
 //5)
 function commaSpace() {
-	let check;
-	let output;
-	//TODO: write the code required for this step
+	let check = strings[3];
+	let output = check.split(', ').reverse().join(', ').trim();
   
 	return output;
 }
