@@ -2,20 +2,25 @@ const input = require('readline-sync');
 
 // Part A: #1 Populate these arrays
 
-let protein = [];
-let grains = [];
-let veggies = [];
-let beverages = [];
-let desserts = [];
+let protein = ['chicken', 'pork', 'tofu', 'beef', 'fish', 'beans'];
+let grains = ['rice', 'pasta', 'corn', 'potato', 'quinoa', 'crackers'];
+let veggies = ['peas', 'green beans', 'kale', 'edamame', 'broccoli', 'asparagus'];
+let beverages = ['juice', 'milk', 'water', 'soy milk', 'soda', 'tea'];
+let desserts = ['apple', 'banana', 'more kale', 'ice cream', 'chocolate', 'kiwi'];
 
 
 function mealAssembly(protein, grains, veggies, beverages, desserts, numMeals) {
   let pantry = [protein, grains, veggies, beverages, desserts];
   let meals = [];
-  
-  /// Part A #2: Write a ``for`` loop inside this function
-  /// Code your solution for part A #2 below this comment (and above the return statement) ... ///
 
+
+  for(let i = 0; i <= numMeals; i++) {
+    let tempMeal = [];
+    for(let j = 0; j < pantry.length; j++) {
+      tempMeal.push(pantry[j][i]);
+    }
+    meals[i] = tempMeal
+  }
 
   return meals;
 }
@@ -53,8 +58,8 @@ function runProgram() {
   /// UNCOMMENT the next two lines to test your ``askForNumber`` solution ///
   /// Tip - don't test this part until you're happy with your solution to part A #2 ///
   
-  // let mealsForX = mealAssembly(protein, grains, veggies, beverages, desserts, askForNumber());
-  // console.log(mealsForX);
+  let mealsForX = mealAssembly(protein, grains, veggies, beverages, desserts, askForNumber());
+  console.log(mealsForX);
 
     /// TEST PART C HERE ///
   /// UNCOMMENT the remaining commented lines and change the password1 and password2 strings to ensure your code is doing its job ///
