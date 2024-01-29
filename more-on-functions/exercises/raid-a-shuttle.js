@@ -18,21 +18,47 @@ function holdStatus(arr){
   }
 }
 
-let fuelLevel = 200000;
+let anonFunction = function(a) {
+  if (checkFuel(a) === 'green') {
+     return a - 100001
+  }
+  else if (checkFuel(a) === 'yellow') {
+     return a - 50001
+  }
+  else {
+     return a;
+  }
+};
+
+//let fuelLevel = 200000;
 let cargoHold = ['meal kits', 'space suits', 'first-aid kit', 'satellite', 'gold', 'water', 'AE-35 unit'];
 
-console.log("Fuel level: " + checkFuel(fuelLevel));
+//console.log(anonFunction(fuelLevel))
+//console.log("Fuel level: " + checkFuel(fuelLevel));
 console.log("Hold status: " + holdStatus(cargoHold));
+
+let anonHold = function (array){
+  for (i = 0; i < array.length; i++){
+  if(array.includes('gold')){
+    array.splice(array.indexOf('gold'), 1, 'coal')
+  } else if(array.includes('AE-35 unit')){
+    array.splice(array.indexOf('AE-35 unit'), 1, 'junk')
+    return array
+  }
+}
+}
+
+let anonArray = anonHold(cargoHold)
+console.log(cargoHold)
+console.log(anonArray)
+
 
 /* Steal some fuel from the shuttle:
  * /
- 
+
 //a). Define an anonymous function and set it equal to a variable with a normal, non-suspicious name. The function takes one parameter. This will be the fuel level on the shuttle.
-
 //b). You must siphon off fuel without alerting the TAs. Inside your function, you want to reduce the fuel level as much as possible WITHOUT changing the color returned by the checkFuel function.
-
 //c). Once you figure out how much fuel to pump out, return that value.
-
 //d). Decide where to best place your function call to gather our new fuel.
 
 /* Next, liberate some of that glorious cargo.
@@ -55,3 +81,4 @@ console.log("Hold status: " + holdStatus(cargoHold));
 
 //c). Use a template literal to return, "Raided _____ kg of fuel from the tanks, and stole ____ and ____ from the cargo hold."
 
+*/
