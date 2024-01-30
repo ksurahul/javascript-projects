@@ -18,7 +18,9 @@ function findMinValue(arr){
 5) Return the new sorted array.
 6) Be sure to print the results in order to verify your code.*/
 
-//Your function here...
+let finalSortedNumbers = [];
+
+
 
 /* BONUS MISSION: Refactor your sorting function to use recursion below:
  */
