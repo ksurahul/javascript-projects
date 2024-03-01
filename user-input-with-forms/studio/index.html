@@ -3,17 +3,34 @@
 <head>
 	<meta charset="utf-8">
 	<script>
-		// TODO: create a handler
-    window.addEventListener("load", function(){
-        // TODO: register the handler
+		
+		window.addEventListener("load", function() {
+
+        let form = document.querySelector("form");
+        form.addEventListener("submit", function(event) {
+        let engineInput = document.querySelector("input[name=engine]:checked");
+		form.setAttribute('action', engineInput.value)
+        if (engineInput.value === "") {
+            alert("Select one option");
+            // stop the form submission
+            event.preventDefault();
+        }
+        });
     });
 	</script>
 </head>
 
 <body>
 
-	<form id="searchForm">
-    <!-- TODO: add form elements -->
+	<form id="searchForm" action="" method='get'>
+		<input type="text" name="q"/>
+		<label>
+			<input type="radio" name="engine" value="https://www.google.com/"/>Google
+			<input type="radio" name="engine" value="https://duckduckgo.com/"/>DuckDuckGo
+			<input type="radio" name="engine" value="https://www.bing.com/"/>Bing
+			<input type="radio" name="engine" value="https://www.ask.com/"/>Ask
+		</label>
+		<button>Go!</button>
 	</form>
 
 </body>
